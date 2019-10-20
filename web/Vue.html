@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <script src="js/vue.min.js"></script>
+    <script src="js/vue-router.js"></script>
+</head>
+<body>
+     <div id="app">
+          <h1>{{mag}}</h1>
+           <input type="button" value="按钮" @click="dian().">
+     </div>
+   <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                mag:"mmm"
+            },
+            methods:{
+                dian: function(){
+                    alert("hcjhs");
+                }
+            }
+        });
+   </script>
+</body>
+</html>

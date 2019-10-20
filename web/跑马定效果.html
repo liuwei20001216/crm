@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跑马动效果</title>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+     <div id="app">
+         <input type="button" value="浪起来" @click="dian()">
+         <input type="button" value="低调" @click="stop()" >
+         <h4>{{msg}}</h4>
+     </div>
+    <script>
+    var vm=new Vue({
+      el:'#app',
+      data:{
+        msg:'猥琐发育，别浪~~！',
+        inte:null
+      },
+        methods:{
+          dian:function () {
+              if(this.inte!=null)return;
+              var _this=this
+               this.inte=setInterval(function () {
+                  var start=_this.msg.substring(0,1)
+                  var end=_this.msg.substring(1)
+                  _this.msg=end+start
+              },1000)
+          },
+          stop:function () {
+             clearInterval(this.inte)
+              this.inte=null;
+          }
+        }
+    });
+    </script>
+</body>
+</html>

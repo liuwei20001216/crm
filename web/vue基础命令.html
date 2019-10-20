@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+    <script src="js/vue.min.js"></script>
+</head>
+
+<body>
+      <div id="app">
+          <h3 v-cloak>{{msg}}</h3>
+          <h3 v-text="msg"></h3>
+          <div v-html="msg2"></div>
+          <input type="button" value="按钮" v-bind:title="mytitle+'jjjj'" v-on:click="dian()">
+          <!--v-bind简写： v-on:简写@ -->
+      </div>
+    <script>
+           var vm=new Vue({
+               el:'#app',
+               data:{
+                   msg:'你好啊',
+                   msg2:'<h1>jdkdkd</h1>',
+                   mytitle:'你就是就是'
+               },
+               methods:{
+                   dian:function () {
+                       alert("我在学习vue.js")
+                   }
+               }
+
+           });
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.min.js"></script>
+    <style>
+         .inner{
+             height: 150px;
+             background-color: aqua;
+         }
+    </style>
+</head>
+<body>
+     <div id="app" class="inner" @click="divhandler()">
+           <input type="button" value="戳他" @click.stop="an()">
+     </div>
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{
+                divhandler:function () {
+                    console.log("这是触发了div事件")
+                },
+                an:function () {
+                    console.log("这是触发了按钮事件")
+                }
+            }
+
+        });
+  </script>
+</body>
+</html>
